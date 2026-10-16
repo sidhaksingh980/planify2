@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+dist-ssr/
+build/
+*.tsbuildinfo
+
+# Environment — never commit credentials.
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editors / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Built PWA service-worker output. The sized icons in public/icons/ ARE
+# committed: the manifest references them unconditionally, they total ~540 kB,
+# and rebuilding them needs sharp, which is absent until `npm ci` has run.
+dev-dist/
+
+# Local runtime data
+*.sqlite
+*.db
+server/.tokens.json

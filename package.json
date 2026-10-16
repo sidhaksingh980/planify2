@@ -1,0 +1,46 @@
+{
+  "name": "planify",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Planify — an Apple Liquid Glass-inspired calendar with AI scheduling, Google sign-in and secure cloud sync.",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c magenta,cyan \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:web": "vite --host 0.0.0.0 --port 5173",
+    "dev:api": "node server/index.mjs",
+    "build": "tsc -p tsconfig.app.json --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "start": "node server/index.mjs",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.node.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "icons": "node scripts/make-icons.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "date-fns": "^3.6.0",
+    "idb": "^8.0.0",
+    "nanoid": "^5.0.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "fake-indexeddb": "^6.2.5",
+    "jsdom": "^30.1.2",
+    "postcss": "^8.4.49",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vite-plugin-pwa": "^0.21.1",
+    "vitest": "^5.0.4"
+  }
+}
